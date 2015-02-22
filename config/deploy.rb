@@ -3,7 +3,7 @@ set :repo_url, 'git@github.com:evnpr/testansible.git'
 set :deploy_to, '/root/testansible'
 set :log_level, :debug
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{tmp/sockets log config/puma public/spree}
+set :linked_dirs, %w{tmp/sockets log config/puma}
 set :sockets_path, Pathname.new("#{fetch(:deploy_to)}/shared/tmp/sockets/")
 
 # These puma settings are only here because capistrano-puma is borked.
@@ -30,7 +30,7 @@ namespace :spree_sample do
         ask(:confirm, "Are you sure you want to delete everything and start again? Type 'yes'")
         if fetch(:confirm) == "yes"
           execute :rake, "db:reset AUTO_ACCEPT=true"
-          execute :rake, "spree_sample:load"
+          #execute :rake, "spree_sample:load"
         end
       end
     end
