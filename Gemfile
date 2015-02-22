@@ -48,3 +48,7 @@ group :development do
   gem 'capistrano-bundler', '1.1.1'
   gem 'capistrano-rails', '1.1.0'
 end
+
+group :production do
+  gem 'puma'
+end
