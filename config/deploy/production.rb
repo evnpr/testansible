@@ -15,7 +15,7 @@ role :db,  %w{root@memcached-dev.qisc.us}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'memcached-dev.qisc.us', user: 'root', roles: %w{web app}, my_property: :my_value
+server 'memcached-dev.qisc.us', user: 'deploy', roles: %w{testansible}, my_property: :my_value
 
 
 # Custom SSH Options
